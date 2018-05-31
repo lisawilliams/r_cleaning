@@ -1,5 +1,5 @@
 ###############################################
-## Data Cleaning with R                      ##
+## Data Cleaning with R (Pt. I)              ##
 ## Alex Richards, NerdWallet (@alexrichards) ##
 ###############################################
 
@@ -36,6 +36,9 @@ library(rvest)
 banks <- read_csv("banklist.csv")
 
 # What to do if the readr package guesses the wrong data type?
+bank_spec <- cols(
+  CERT = col_character()
+  )
 
 # 2. Excel
 library(readxl)
@@ -131,4 +134,6 @@ sb_table <- sb_table[, c("number", "numeral", "date", "year", "month", "location
 # Export a CSV copy
 write_csv(sb_table, "sb_data.csv")
 
-# What's the advantage in R over a traditional GUI like Excel? 
+# What's the advantage in R over a traditional GUI like Excel?
+
+# Notice anything else we could change?
